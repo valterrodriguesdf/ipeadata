@@ -1,0 +1,83 @@
+/* General
+--------------------------------------------------*/
+@font-face {
+  font-family: 'Raleway-Regular';
+  src: url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),  
+  	   url('../fonts/Raleway-Regular.woff')format('woff'), 
+	   url('../fonts/Raleway-Regular.ttf') format('truetype'), 
+	   url('../fonts/Raleway-Regular.svg#Raleway-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway-Bold';
+  src: url('../fonts/Raleway-Bold.eot?#iefix') format('embedded-opentype'),
+  	   url('../fonts/Raleway-Bold.woff') format('woff'), 
+	   url('../fonts/Raleway-Bold.ttf') format('truetype'), 
+	   url('../fonts/Raleway-Bold.svg#Raleway-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Tabelas - Filstros
+--------------------------------------------------*/
+table.tabelaPadraoFiltro .orderTable {
+	float: right;
+	width: 10px;
+	position: relative;
+}
+table.tabelaPadraoFiltro .orderTable a {
+	position: absolute;
+	left: 0;
+	top: -4px;
+	color: #FFF;
+}
+table.tabelaPadraoFiltro .orderTable a.down {
+	top: 4px;	
+}
+table.tabelaPadraoFiltro thead.topo {
+	background: #183b67;	
+}
+table.tabelaPadraoFiltro thead.topo tr th {
+	color: #FFF;
+}
+table.tabelaPadraoFiltro.table-bordered td, 
+table.tabelaPadraoFiltro.table-bordered th {
+    border: 1px solid #e5e5e5;
+}
+table.tabelaPadraoFiltro.table-bordered th {
+    border: 1px solid #183b67;
+}
+table.tabelaPadraoFiltro.table-bordered th {
+    border-right: 1px solid #e5e5e5;
+}
+table.tabelaPadraoFiltro.table-bordered th:last-child {
+    border-right: 1px solid #183b67;
+}
+table.tabelaPadraoFiltro tbody tr:last-child td {
+	border-bottom: 1px solid #333d5c;	
+}
+table.tabelaPadraoFiltro tbody tr td.first {
+	border-left: 1px solid #333d5c;	
+}
+table.tabelaPadraoFiltro tbody tr td.last {
+	border-right: 1px solid #333d5c;	
+}
+table.tabelaPadraoFiltro thead tr:last-child td {
+	border: 1px solid #333d5c;	
+}
+table.tabelaPadraoFiltro tbody tr:hover {
+	background: #dbe1ea;
+	cursor: pointer;
+}
+table.tabelaPadraoFiltro tbody tr td {
+	font-family: 'Raleway-Regular';
+	color: #2a3d65;
+	font-size: 18px;
+}
+table.tabelaPadraoFiltro thead tr th {
+	font-family: 'Raleway-Bold';
+	font-weight: normal;
+	color: #FFF;
+	font-size: 18px;
+}
