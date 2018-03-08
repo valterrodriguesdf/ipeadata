@@ -1,3 +1,28 @@
+/**
+                                      
+ .-.                      .-.       .-.       
+ : :                      : :      .' `.      
+ : :.---.  .--.  .--.   .-' : .--. `. .'.--.  
+ : :: .; `' '_.'' .; ; ' .; :' .; ; : :' .; ; 
+ :_;: ._.'`.__.'`.__,_;`.__.'`.__,_;:_;`.__,_;
+    : :                                       
+    :_;            
+
+                                 
+ * @language: Portuguese
+ * @job: HTML5/CSS3/JS
+ * @technology: HTML5/CSS3/JS
+ * @author: Valter Rodrigues
+ * @date: 01/03/2018 
+ * 
+ * Copyright(c) Todos os direitos reservados.
+ *  
+**/
+
+/*--------------------------------------------------*/
+/* Styles - General Portal
+/*--------------------------------------------------*/
+
 /* General
 --------------------------------------------------*/
 @font-face {
@@ -18,8 +43,708 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'AvenirNextLTPro-Bold';
+  src: url('../fonts/AvenirNextLTPro-Bold.eot?#iefix') format('embedded-opentype'),
+  	   url('../fonts/AvenirNextLTPro-Bold.otf') format('opentype'),
+	   url('../fonts/AvenirNextLTPro-Bold.woff') format('woff'), 
+	   url('../fonts/AvenirNextLTPro-Bold.ttf') format('truetype'), 
+	   url('../fonts/AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
-/* Tabelas - Filstros
+@font-face {
+  font-family: 'Raleway-Medium';
+  src: url('../fonts/Raleway-Medium.eot?#iefix') format('embedded-opentype'),
+  	   url('../fonts/Raleway-Medium.woff') format('woff'), 
+	   url('../fonts/Raleway-Medium.ttf') format('truetype'), 
+	   url('../fonts/Raleway-Medium.svg#Raleway-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway-Italic';
+  src: url('../fonts/Raleway-Italic.eot?#iefix') format('embedded-opentype'), 
+   	   url('../fonts/Raleway-Italic.woff') format('woff'), 
+	   url('../fonts/Raleway-Italic.ttf') format('truetype'), 
+	   url('../fonts/Raleway-Italic.svg#Raleway-Italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway-SemiBold';
+  src: url('../fonts/Raleway-SemiBold.eot?#iefix') format('embedded-opentype'),  
+  	   url('../fonts/Raleway-SemiBold.woff') format('woff'), 
+	   url('../fonts/Raleway-SemiBold.ttf')  format('truetype'), 
+	   url('../fonts/Raleway-SemiBold.svg#Raleway-SemiBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+header.topo h1,
+header.topo h2,
+section.busca h1,
+section.busca div.formBusca button.botao,
+section.niveisGeograficos div.boxMapa div.mapa a,
+section.niveisGeograficosMunicipios div.boxMapa div.mapa a,
+section.menu div.boxMenu div.etapa_1 h2 span.plus {
+	text-indent: -9999px;
+	overflow: hidden;
+	display: block;	
+}
+html {
+	overflow: hidden;
+	overflow-y: scroll;	
+}
+section {
+	float: left;
+	display: block;
+	width: 100%;	
+}
+
+/* Header
+--------------------------------------------------*/
+#barra-brasil {
+	position: fixed;
+	width: 100%;
+	z-index: 900;	
+}
+header.topo {
+	float: left;
+	display: block;
+	width: 100%;
+	background: #FFF;
+	min-height: 58px;
+	position: fixed;
+	top: 33px;
+	z-index: 500;
+	-webkit-box-shadow: 0px 8px 10px -3px rgba(211,210,211,1);
+	-moz-box-shadow: 0px 8px 10px -3px rgba(211,210,211,1);
+	box-shadow: 0px 8px 10px -3px rgba(211,210,211,1);
+}
+header.topo h1 {
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+	width: 125px;
+	height: 37px;
+	background: url(../img/bg/bg_logo_ipeadata.png) no-repeat;
+}
+header.topo h1 a {
+	width: 125px;
+	height: 37px;
+	display: block;	
+}
+header.topo h2 {
+	background: url(../img/bg/bg_logo.png) no-repeat;
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+	width: 61px;
+	height: 39px;
+	display: block;	
+	float: right;
+	margin-right: 10px;
+}
+header.topo h2 a {
+	width: 61px;
+	height: 39px;
+	display: block	
+}
+header.topo nav {
+	display: block;
+	width: 100%;
+	margin-top: 17px;
+}
+header.topo nav ul {
+	display: table;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+header.topo nav ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: inline-block;
+	margin-right: 80px;
+}
+header.topo nav ul li:last-child {
+	 margin: 0;	
+}
+header.topo nav ul li a {
+	transition: font-weight .3s;
+	font-family: 'Raleway-Regular';
+	color: #2a3d65;
+	font-size: 17px;
+	color: #003e68;
+	min-width: 70px;
+	display: block;
+}
+header.topo nav ul li a.ativo,
+header.topo nav ul li a:hover {
+	font-weight: bold;
+	text-decoration: none;	
+	transition: font-weight .3s;
+}
+
+/*--------------------------------------------------*/
+/* Page - Home
+/*--------------------------------------------------*/
+section.busca {
+	min-height: 842px;
+	background: url(../img/bg/bg_busca.jpg) no-repeat top center;
+}
+section.busca h1 {
+	background: url(../img/bg/bg_logo_busca.png) no-repeat;
+	min-height: 150px;
+	margin: 0 auto;
+	display: block;
+	max-width: 523px;
+	width: 100%;
+	background-size: contain;
+	margin-bottom: 40px;	
+}
+section.busca div.formBusca {
+	margin: 0 auto;
+	margin-top: 300px;
+	max-width: 910px;
+}
+section.busca div.formBusca div.box {
+	width: 100%;
+	display: block;
+	position: relative;	
+}
+section.busca div.formBusca button.botao {
+	background: url(../img/bg/bg_lupa.png) no-repeat;
+	width: 39px;
+	height: 39px;
+	cursor: pointer;
+	position: absolute;
+	right: 16px;
+	bottom: 16px;
+	border: none;
+}
+section.busca div.formBusca label.strLabel {
+	font-family: 'Raleway-Medium';
+	font-size: 27px;
+	color: #263f5c;
+	display: block;
+	margin-bottom: 15px;
+	text-align: center;
+}
+section.busca div.formBusca input.caixaTexto {
+	font-family: 'Raleway-Italic';
+	width: 100%;
+	display: block;
+	border: 1px solid #e9e8ea;
+	color: #989898;
+	font-size: 24px;
+	padding: 14px 20px;
+	padding-right: 65px;	
+	-webkit-box-shadow: 0px 8px 10px -3px rgba(211,210,211,1);
+	-moz-box-shadow: 0px 8px 10px -3px rgba(211,210,211,1);
+	box-shadow: 0px 8px 10px -3px rgba(211,210,211,1);	
+}
+section.busca div.formBusca input.caixaTexto::-webkit-input-placeholder {
+  color: #989898;
+  opacity: 1;
+}
+section.busca div.formBusca input.caixaTexto::-moz-placeholder {
+  color: #989898;
+  opacity: 1;
+}
+section.busca div.formBusca input.caixaTexto:-ms-input-placeholder {
+  color: #989898;
+  opacity: 1;
+}
+section.busca div.formBusca input.caixaTexto:-moz-placeholder {
+  color: #989898;
+  opacity: 1;
+}
+section.busca div.formBusca label {
+	display: block;
+	text-align: center;
+}
+section.menu {
+	padding: 70px 0 0 0;
+}
+section.menu div.boxMenu {
+	display: table;
+	margin: 0 auto;
+	width: 250px;
+	position: relative;	
+}
+section.menu div.boxMenu div.etapa_1 {
+	min-height: 300px;	
+}
+section.menu div.boxMenu div.etapa_1 p {
+	position: absolute;
+	top: 230px;
+	display: none;
+    left: -12px;
+    width: 283px;
+    position: absolute;
+	text-align: center;
+}
+section.menu div.boxMenu div.etapa_1 a {
+	display: block;
+}
+section.menu div.boxMenu div.etapa_1 div.icone {
+	display: block;
+	width: 125px;
+	height: 115px;
+	display: table;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+section.menu div.boxMenu div.etapa_1 p {
+	font-family: 'Raleway-Regular';
+	padding: 0 10px;
+	margin: 0;
+	text-align: center;
+	color: #506faf;
+	font-size: 15px;
+	line-height: 21px;
+}
+section.menu div.boxMenu div.etapa_1 a:hover {
+	text-decoration: none;
+}
+section.menu div.boxMenu div.etapa_1 h2 {
+	font-family: 'Raleway-Regular';
+	text-align: center;
+	font-size: 24px;
+	background: #4a6db1;
+	border-bottom: 1px solid #305195;
+	color: #FFF;
+	padding: 15px 35px;
+	display: block;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	position: relative;
+}
+section.menu div.boxMenu div.etapa_1 h2 span.plus {
+	position: absolute;
+	right: 12px;
+    top: 24px;
+	font-size: 30px;
+	background: url(../img/bg/bg_plus.png) no-repeat;
+	width: 12px;
+	height: 12px;	
+}
+section.menu div.boxMenu.mn_1 div.etapa_1 h2 {
+	background: #FFF;
+	border: 1px solid #315296;
+	color: #506faf;
+}
+section.menu div.boxMenu.mn_1 div.etapa_1 p {
+	color: #506faf;
+}
+section.menu div.boxMenu.mn_1 div.etapa_1 div.icone {
+	background: url(../img/bg/bg_icone_menu_1_normal.png) no-repeat top center;
+}
+section.menu div.boxMenu.mn_1:hover div.etapa_1 div.icone {
+	background: url(../img/bg/bg_icone_menu_1.png) no-repeat top center;
+}
+section.menu div.boxMenu.mn_1:hover div.etapa_1 h2 {
+	background: #4a6db1;
+	border: 1px solid #4a6db1;
+	color: #FFF;
+}
+section.menu div.boxMenu.mn_2 div.etapa_1 h2 {
+	color: #1a9b3f;
+	background: #FFF;
+	border: 1px solid #1a9b3f;
+}
+section.menu div.boxMenu.mn_2 div.etapa_1 div.icone {
+	background: url(../img/bg/bg_icone_menu_2_normal.png) no-repeat top center;
+}
+section.menu div.boxMenu.mn_2:hover div.etapa_1 div.icone {
+	background: url(../img/bg/bg_icone_menu_2.png) no-repeat top center;
+}
+section.menu div.boxMenu.mn_2:hover div.etapa_1 h2 {
+	background: #1a9b3f;
+	color: #FFF;
+	border-bottom: 1px solid #60a44a;
+}
+section.menu div.boxMenu.mn_2 div.etapa_1 p {
+	color: #74ab61;
+}
+section.menu div.boxMenu.mn_2 div.etapa_1 p {
+	color: #74ab61;
+}
+section.menu div.boxMenu.mn_3 div.etapa_1 h2 {
+	background: #FFF;
+	border: 1px solid #bf324c;
+	color: #bf324c;
+}
+section.menu div.boxMenu.mn_3 div.etapa_1 p {
+	color: #bd4152;
+}
+section.menu div.boxMenu.mn_3 div.etapa_1 div.icone {
+	background: url(../img/bg/bg_icone_menu_3_normal.png) no-repeat top center;
+}
+section.menu div.boxMenu.mn_3:hover div.etapa_1 h2 {
+	background: #bf324c;
+	border: 1px solid #bf324c;
+	color: #FFF;
+}
+section.menu div.boxMenu.mn_3:hover div.etapa_1 div.icone {
+	background: url(../img/bg/bg_icone_menu_3.png) no-repeat top center;
+}
+section.menu div.boxMenu:hover p {
+	display: block !important; 
+}
+
+section.menu div.boxMenu div.etapa_2 {
+	width: 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+section.temas {
+	padding: 70px 0;
+}
+section.temas h1 {
+	font-family: 'Raleway-Bold';
+	font-size: 27px;
+	margin: 40px 0;
+	padding: 0;
+	text-align: center;	
+	font-weight: bold;
+	color: #115099;
+}
+section.temas div.boxTipo {
+	float: left;
+	display: block;
+	width: 100%;
+	position: relative;
+}
+section.temas div.boxTipo div.rep_1 {
+	background: url(../img/bg/bg_degrade_1.png) repeat;
+	width: 2560px;
+	height: 130px;
+	position: absolute;
+	left: -2568px;
+	top: 0;	
+}
+section.temas div.boxTipo div.rep_2 {
+	background: url(../img/bg/bg_degrade_1.png) repeat;
+	width: 2560px;
+	height: 500px;
+	position: absolute;
+	right: -2583px;
+	top: 0;	
+}
+section.temas div.boxTema {
+	overflow: hidden;
+	float: left;
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	min-height: 129px;
+	text-align: center;	
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	border-radius: 22px;
+	display: inline-table;
+	height: 130px;
+	-webkit-box-shadow: 0px 8px 10px -3px rgba(0,0,0,0);
+	-moz-box-shadow: 0px 8px 10px -3px rgba(0,0,0,0);
+	box-shadow: 0px 8px 10px -3px rgba(0,0,0,0);	
+}
+section.temas div.boxTema:hover {
+	-webkit-box-shadow: 0px 8px 10px -3px rgba(211,210,211,1);
+	-moz-box-shadow: 0px 8px 10px -3px rgba(211,210,211,1);
+	box-shadow: 0px 8px 10px -3px rgba(211,210,211,1);	
+}
+section.temas div.boxTema a {
+	border: 1px solid #5974aa;
+	overflow: hidden;
+	font-family: 'Raleway-Regular';
+	font-size: 20px;
+	display: table-cell;
+	color: #506faf;
+	vertical-align: middle;
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	border-radius: 22px;
+}
+section.temas div.boxTema:hover a {
+	overflow: hidden;
+	background: #4372d9;
+	color: #FFF;
+	text-decoration: none;
+}
+section.temas div.type_2 div.boxTema a {
+	border: 1px solid #008687;
+	color: #1cb4b5;
+}
+section.temas div.type_2 div.boxTema:hover a {
+	background: #01b9b9;
+	border: 1px solid #01b9b9;
+	color: #FFF;
+}
+section.temas div.type_3 div.boxTema a {
+	border: 1px solid #7bae6d;
+	color: #6eac5b;
+}
+section.temas div.type_3 div.boxTema:hover a {
+	background: #6cb85b;
+	border: 1px solid #6cb85b;
+	color: #FFF;
+}
+section.temas div.type_4 div.boxTema a {
+	border: 1px solid #9e6f1c;
+	color: #c29013;
+}
+section.temas div.type_4 div.boxTema:hover a {
+	background: #c08c21;
+	border: 1px solid #c08c21;
+	color: #FFF;
+}
+section.temas div.type_5 div.boxTema a {
+	border: 1px solid #b14045;
+	color: #cc6d70;
+}
+section.temas div.type_5 div.boxTema:hover a {
+	background: #be324b;
+	border: 1px solid #be324b;
+	color: #FFF;
+}
+section.temas div.type_6 div.boxTema a {
+	border: 1px solid #946cc4;
+	color: #6c5699;
+}
+section.temas div.type_6 div.boxTema:hover a {
+	background: #7947b5;
+	border: 1px solid #7947b5;
+	color: #FFF;
+}
+section.temas div.type_7 div.boxTema a {
+	border: 1px solid #807b7f;
+	color: #7e7285;
+}
+section.temas div.type_7 div.boxTema:hover a {
+	background: #7f7084;
+	border: 1px solid #7f7084;
+	color: #FFF;
+}
+section.temas div.type_1  div.rep_1,
+section.temas div.type_1  div.rep_2 {
+	background: url(../img/bg/bg_degrade_1.png) repeat;
+}
+section.temas div.type_2 div.rep_1,
+section.temas div.type_2 div.rep_2 {
+	background: url(../img/bg/bg_degrade_2.png) repeat;
+}
+section.temas div.type_3 div.rep_1,
+section.temas div.type_3 div.rep_2 {
+	background: url(../img/bg/bg_degrade_3.png) repeat;
+}
+section.temas div.type_4 div.rep_1,
+section.temas div.type_4 div.rep_2 {
+	background: url(../img/bg/bg_degrade_4.png) repeat;
+}
+section.temas div.type_5 div.rep_1,
+section.temas div.type_5 div.rep_2 {
+	background: url(../img/bg/bg_degrade_5.png) repeat;
+}
+section.temas div.type_6 div.rep_1,
+section.temas div.type_6 div.rep_2 {
+	background: url(../img/bg/bg_degrade_6.png) repeat;
+}
+section.temas div.type_7 div.rep_1,
+section.temas div.type_7 div.rep_2 {
+	background: url(../img/bg/bg_degrade_7.png) repeat;
+}
+section.niveisGeograficos {
+	padding-bottom: 100px;	
+}
+section.niveisGeograficos h1 {
+	font-family: 'Raleway-Bold';
+	font-size: 27px;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 50px;
+	text-align: center;	
+	font-weight: bold;
+	color: #115099;
+}
+section.niveisGeograficos div.boxMapa {
+	float: left;
+	display: block;
+	width: 100%;
+	position: relative;
+}
+section.niveisGeograficos div.boxMapa h3 {
+	font-family: 'Raleway-SemiBold';
+	border: 1px solid #413c80;
+	display: table;
+	margin: 0 auto;
+	color: #73b5c7;
+	font-size: 24px;
+	padding: 10px 12px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+section.niveisGeograficos div.boxMapa div.mapa {
+	margin: 0 auto;
+	display: block;
+	margin-top: 40px;
+	width: 100%;
+	width: 419px;
+	height: 419px;
+}
+section.niveisGeograficos div.boxMapa:hover h3,
+section.niveisGeograficos div.boxMapa.ativo h3 {
+	background: #413c80;
+	color: #73b5c7;
+}
+section.niveisGeograficos div.boxMapa div.mapa a {
+	width: 419px;
+	height: 419px;
+}
+section.niveisGeograficos div.boxMapa.tp1 div.mapa a {
+	background: url(../img/gr/gr_mapa_1_normal.png) no-repeat;
+}
+section.niveisGeograficos div.boxMapa.tp1:hover div.mapa a,
+section.niveisGeograficos div.boxMapa.tp1.ativo div.mapa a {
+	background: url(../img/gr/gr_mapa_1_ativo.png) no-repeat;
+}
+section.niveisGeograficos div.boxMapa.tp2 div.mapa a {
+	background: url(../img/gr/gr_mapa_2_normal.png) no-repeat;
+}
+section.niveisGeograficos div.boxMapa.tp2:hover div.mapa a,
+section.niveisGeograficos div.boxMapa.tp2.ativo div.mapa a {
+	background: url(../img/gr/gr_mapa_2_ativo.png) no-repeat;
+}
+section.niveisGeograficosMunicipios {
+	padding-bottom: 100px;	
+}
+section.niveisGeograficosMunicipios h1 {
+	font-family: 'Raleway-Bold';
+	font-size: 27px;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 50px;
+	text-align: center;	
+	font-weight: bold;
+	color: #115099;
+}
+section.niveisGeograficosMunicipios h1 {
+	font-family: 'Raleway-Bold';
+	font-size: 27px;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 50px;
+	text-align: center;	
+	font-weight: bold;
+	color: #115099;
+}
+section.niveisGeograficosMunicipios div.boxMapa div.mapa {
+    display: block;
+    margin: 40px auto 0;
+	max-width: 419px;
+}
+section.niveisGeograficosMunicipios div.boxMapa h3 {
+	font-family: 'Raleway-SemiBold';
+	border: 1px solid #413c80;
+	display: table;
+	margin: 0 auto;
+	color: #6c5699;
+	font-size: 24px;
+	padding: 10px 12px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+section.niveisGeograficosMunicipios div.boxMapa:hover h3,
+section.niveisGeograficosMunicipios div.boxMapa.ativo h3 {
+	background: #413c80;
+	color: #b195bf;
+}
+section.niveisGeograficosMunicipios div.boxMapa div.mapa a {
+	max-width: 419px;
+	min-height: 290px;
+	width: 100%;
+}
+section.niveisGeograficosMunicipios div.boxMapa.tp1 div.mapa a {
+	background: url(../img/gr/gr_mapa_3_normal.png) no-repeat;
+	background-size: contain;
+}
+section.niveisGeograficosMunicipios div.boxMapa.tp1:hover div.mapa a,
+section.niveisGeograficosMunicipios div.boxMapa.tp1.ativo div.mapa a {
+	background: url(../img/gr/gr_mapa_3_ativo.png) no-repeat;
+	background-size: contain;
+}
+section.niveisGeograficosMunicipios div.boxMapa.tp2 div.mapa a {
+	background: url(../img/gr/gr_mapa_4_normal.png) no-repeat;
+	background-size: contain;
+}
+section.niveisGeograficosMunicipios div.boxMapa.tp2:hover div.mapa a,
+section.niveisGeograficosMunicipios div.boxMapa.tp2.ativo div.mapa a {
+	background: url(../img/gr/gr_mapa_4_ativo.png) no-repeat;
+	background-size: contain;
+}
+section.niveisGeograficosMunicipios div.boxMapa.tp3 div.mapa a {
+	background: url(../img/gr/gr_mapa_5_normal.png) no-repeat;
+	background-size: contain;
+}
+section.niveisGeograficosMunicipios div.boxMapa.tp3:hover div.mapa a,
+section.niveisGeograficosMunicipios div.boxMapa.tp3.ativo div.mapa a {
+	background: url(../img/gr/gr_mapa_5_ativo.png) no-repeat;
+	background-size: contain;
+}
+section.niveisGeograficosMunicipios div.boxMapa.tp4 div.mapa a {
+	background: url(../img/gr/gr_mapa_4_normal.png) no-repeat;
+	background-size: contain;
+}
+section.niveisGeograficosMunicipios div.boxMapa.tp4:hover div.mapa a,
+section.niveisGeograficosMunicipios div.boxMapa.tp4.ativo div.mapa a {
+	background: url(../img/gr/gr_mapa_4_ativo.png) no-repeat;
+	background-size: contain;
+}
+
+/*--------------------------------------------------*/
+/* Replicate - Styles for Portal
+/*--------------------------------------------------*/
+
+/* Footer
+--------------------------------------------------*/
+footer.rodape {
+	float: left;
+	display: block;
+	width: 100%;
+	background: red;
+	min-height: 37px;
+	background: #f1f1f0;
+}
+footer.rodape ul.menu {
+	margin: 5px auto;
+	padding: 0;
+	display: table;
+	list-style: none;
+}
+footer.rodape ul.menu li {
+	margin: 0;
+	padding: 0;
+	display: inline;
+	list-style: none;
+	margin: 0 70px;
+}
+footer.rodape ul.menu li a {
+	font-family: 'AvenirNextLTPro-Bold';
+	color: #263f5c;
+	font-size: 15px;	
+}
+
+/* Tabelas - Filtros
 --------------------------------------------------*/
 table.tabelaPadraoFiltro .orderTable {
 	float: right;
@@ -82,6 +807,12 @@ table.tabelaPadraoFiltro thead tr th {
 	font-size: 18px;
 }
 
+/*--------------------------------------------------*/
+/* Responsive Site
+/*--------------------------------------------------*/
+
+/* Tablet
+--------------------------------------------------*/
 @media screen and (max-width: 980px) {
 	table.tabelaPadraoFiltro {
 		border:0;
