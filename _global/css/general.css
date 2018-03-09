@@ -87,7 +87,9 @@ section.busca h1,
 section.busca div.formBusca button.botao,
 section.niveisGeograficos div.boxMapa div.mapa a,
 section.niveisGeograficosMunicipios div.boxMapa div.mapa a,
-section.menu div.boxMenu div.etapa_1 h2 span.plus {
+section.menu div.boxMenu div.etapa_1 h2 span.plus,
+header.topo div.buscaTopo button.botao,
+section.menu div.boxMenu div.etapa_3 a.voltar {
 	text-indent: -9999px;
 	overflow: hidden;
 	display: block;	
@@ -186,6 +188,32 @@ header.topo nav ul li a:hover {
 	font-weight: bold;
 	text-decoration: none;	
 	transition: font-weight .3s;
+}
+header.topo div.buscaTopo {
+	width: 100%;
+	display: none;
+	margin-top: 10px;
+}
+header.topo div.buscaTopo input {
+	border: 1px solid #00396c;
+	color: #696968;
+	font-family: "Raleway-Italic";
+	font-size: 16px;
+	height: 38px;	
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding-right: 30px;
+}
+header.topo div.buscaTopo button.botao {
+	position: absolute;
+	right: 20px;
+    top: 16px;
+	background: url(../img/bg/bg_lupa_2.png) no-repeat;
+	width: 24px;
+	height: 24px;
+	border: 0;
+	cursor: pointer;
 }
 
 /*--------------------------------------------------*/
@@ -345,9 +373,11 @@ section.menu div.boxMenu.mn_1 div.etapa_1 p {
 section.menu div.boxMenu.mn_1 div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_1_normal.png) no-repeat top center;
 }
+section.menu div.boxMenu.mn_1.ativo div.etapa_1 div.icone,
 section.menu div.boxMenu.mn_1:hover div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_1.png) no-repeat top center;
 }
+section.menu div.boxMenu.mn_1.ativo div.etapa_1 h2,
 section.menu div.boxMenu.mn_1:hover div.etapa_1 h2 {
 	background: #4a6db1;
 	border: 1px solid #4a6db1;
@@ -361,13 +391,21 @@ section.menu div.boxMenu.mn_2 div.etapa_1 h2 {
 section.menu div.boxMenu.mn_2 div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_2_normal.png) no-repeat top center;
 }
-section.menu div.boxMenu.mn_2:hover div.etapa_1 div.icone {
+section.menu div.boxMenu.mn_2:hover div.etapa_1 div.icone,
+section.menu div.boxMenu.mn_2.ativo div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_2.png) no-repeat top center;
 }
+section.menu div.boxMenu.mn_2.ativo div.etapa_1 h2,
 section.menu div.boxMenu.mn_2:hover div.etapa_1 h2 {
 	background: #1a9b3f;
 	color: #FFF;
 	border-bottom: 1px solid #60a44a;
+}
+section.menu div.boxMenu.mn_2 div.etapa_2 {
+	background: #1a9b3f;
+}
+section.menu div.boxMenu.mn_2 div.etapa_3 {
+	background: #1a9b3f;
 }
 section.menu div.boxMenu.mn_2 div.etapa_1 p {
 	color: #74ab61;
@@ -386,25 +424,123 @@ section.menu div.boxMenu.mn_3 div.etapa_1 p {
 section.menu div.boxMenu.mn_3 div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_3_normal.png) no-repeat top center;
 }
+section.menu div.boxMenu.mn_3.ativo div.etapa_1 h2,
 section.menu div.boxMenu.mn_3:hover div.etapa_1 h2 {
 	background: #bf324c;
 	border: 1px solid #bf324c;
 	color: #FFF;
 }
+section.menu div.boxMenu.mn_3.ativo div.etapa_1 div.icone,
 section.menu div.boxMenu.mn_3:hover div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_3.png) no-repeat top center;
+}
+section.menu div.boxMenu.mn_3 div.etapa_2 {
+	background: #bf324c;
+}
+section.menu div.boxMenu.mn_3 div.etapa_3 {
+	background: #bf324c;
 }
 section.menu div.boxMenu:hover p {
 	display: block !important; 
 }
-
+section.menu div.boxMenu:hover p {
+	display: block !important; 
+}
+section.menu div.boxMenu.ativo p {
+	display: none !important;
+}
 section.menu div.boxMenu div.etapa_2 {
 	width: 100%;
 	display: block;
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 145px;
+	display: block;
+	background: #4a6db1;
+	padding: 10px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
 	display: none;
+}
+section.menu div.boxMenu div.etapa_2 ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+section.menu div.boxMenu div.etapa_2 ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+section.menu div.boxMenu div.etapa_2 ul li a {
+	display: block;
+	padding: 5px 15px;
+	text-align: center;
+	font-family: 'Raleway-Regular';
+	text-align: center;
+	color: #FFF;
+	opacity: 0.6;
+	font-size: 22px;
+}
+section.menu div.boxMenu div.etapa_2 ul li a:hover {
+	text-decoration: none;
+	opacity: 1;	
+}
+section.menu div.boxMenu div.etapa_3 {
+	width: 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 145px;
+	display: block;
+	background: #4a6db1;
+	padding: 10px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	display: none;
+}
+section.menu div.boxMenu div.etapa_3 a.voltar {
+    background: url(../img/bg/bg_voltar.png) no-repeat scroll 0 0;
+    height: 15px;
+    left: 15px;
+    position: absolute;
+    top: 23px;
+    width: 12px;
+}
+section.menu div.boxMenu div.etapa_3 h3 {
+	font-family: 'Raleway-Regular';
+	text-align: center;
+	margin: 8px 0;
+	font-size: 22px;
+	color: #FFF;	
+}
+section.menu div.boxMenu div.etapa_3 ul {
+	margin: 0;
+	padding: 5px 0;
+	list-style: none;
+}
+section.menu div.boxMenu div.etapa_3 ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+section.menu div.boxMenu div.etapa_3 ul li a {
+	display: block;
+	padding: 6px 15px;
+	text-align: center;
+	color: #FFF;
+	opacity: 0.6;
+}
+section.menu div.boxMenu div.etapa_3 ul li a:hover {
+	text-decoration: none;
+	opacity: 1;	
+}
+section.menu div.boxMenu .scroll-pane-menu {
+	width: 100%;
+	height: 130px;
+	overflow: auto;
 }
 section.temas {
 	padding: 70px 0;
@@ -587,8 +723,8 @@ section.niveisGeograficos div.boxMapa h3 {
 	display: table;
 	margin: 0 auto;
 	color: #73b5c7;
-	font-size: 24px;
-	padding: 10px 12px;
+	font-size: 20px;
+	padding: 10px 20px;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
@@ -624,11 +760,68 @@ section.niveisGeograficos div.boxMapa.tp2:hover div.mapa a,
 section.niveisGeograficos div.boxMapa.tp2.ativo div.mapa a {
 	background: url(../img/gr/gr_mapa_2_ativo.png) no-repeat;
 }
+section.tabelaDados {
+	float: left;
+	display: none;
+	width: 100%;
+	overflow: hidden;
+	background: #413c80;
+	padding-top: 17px;
+	padding-bottom: 10px;
+}
+section#dadosNiveisGeograficosMunicipios {
+	margin-bottom: 130px;	
+}
+section.tabelaDados .scroll-pane {
+	width: 100%;
+	height: 530px;
+	overflow: auto;
+}
+section.tabelaDados .horizontal-only {
+	height: auto;
+	max-height: 530px;
+}
+section.tabelaDados a.btExibir {
+	font-family: 'Raleway-Regular';
+	width: 105px;
+	background: url(../img/bg/bg_lupa_3.png) no-repeat top 10px right 10px #FFFF;	
+	margin-bottom: 10px;
+	float: left;
+	color: #506faf;
+	padding: 10px 13px;
+	-webkit-border-radius: 17px;
+	-moz-border-radius: 17px;
+	border-radius: 17px;
+}
+section.tabelaDados a.btExibir {
+	text-decoration: none;	
+}
+section.tabelaDados table.table thead.topo {
+	background: #413c80;
+}
+section.tabelaDados table.table thead.topo tr th {
+	border-bottom: 1px solid #4c6196;
+}
+section.tabelaDados table.table.table-bordered td, 
+section.tabelaDados table.table.table-bordered th {
+    border: 1px solid #4c6196;
+}
+section.tabelaDados table.table.table-bordered th {
+    border: 1px solid #413c80;
+}
+section.tabelaDados table.table td {
+	color: #FFF;
+}
+section.tabelaDados table.table tbody tr:hover {
+	background: #00b8ca;
+	cursor: pointer;
+}
 section.niveisGeograficosMunicipios {
+	padding-top: 80px;
 	padding-bottom: 100px;	
 }
 section.niveisGeograficosMunicipios h1 {
-	font-family: 'Raleway-Bold';
+	font-family: 'Raleway-SemiBold';
 	font-size: 27px;
 	margin: 0;
 	padding: 0;
@@ -638,7 +831,7 @@ section.niveisGeograficosMunicipios h1 {
 	color: #115099;
 }
 section.niveisGeograficosMunicipios h1 {
-	font-family: 'Raleway-Bold';
+	font-family: 'Raleway-SemiBold';
 	font-size: 27px;
 	margin: 0;
 	padding: 0;
@@ -658,7 +851,7 @@ section.niveisGeograficosMunicipios div.boxMapa h3 {
 	display: table;
 	margin: 0 auto;
 	color: #6c5699;
-	font-size: 24px;
+	font-size: 20px;
 	padding: 10px 12px;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
@@ -721,9 +914,11 @@ footer.rodape {
 	float: left;
 	display: block;
 	width: 100%;
-	background: red;
 	min-height: 37px;
 	background: #f1f1f0;
+	position: fixed;
+	left: 0;
+	bottom: 0;
 }
 footer.rodape ul.menu {
 	margin: 5px auto;
@@ -805,6 +1000,94 @@ table.tabelaPadraoFiltro thead tr th {
 	font-weight: normal;
 	color: #FFF;
 	font-size: 18px;
+}
+.jspContainer {
+	overflow: hidden;
+	position: relative;
+}
+.jspPane {
+	position: absolute;
+}
+.jspVerticalBar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 8px;
+	height: 100%;
+}
+.jspHorizontalBar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 16px;
+	background: red;
+}
+.jspCap {
+	display: none;
+}
+.jspHorizontalBar .jspCap {
+	float: left;
+}
+.jspTrack {
+	background: transparent;
+	position: relative;
+}
+.jspDrag {
+	background: #FFF;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+	float: left;
+	height: 100%;
+}
+.jspArrow {
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}
+.jspArrow.jspDisabled {
+	cursor: default;
+	background: #80808d;
+}
+.jspVerticalBar .jspArrow {
+	height: 8px;
+}
+.jspHorizontalBar .jspArrow {
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+.jspVerticalBar .jspArrow:focus {
+	outline: none;
+}
+.jspCorner {
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner {
+	margin: 0 -3px 0 0;
+}
+.scroll-pane {
+	width: 100%;
+	height: 200px;
+	overflow: auto;
+}
+.horizontal-only {
+	height: auto;
+	max-height: 200px;
 }
 
 /*--------------------------------------------------*/
