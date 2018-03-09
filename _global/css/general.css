@@ -1,3 +1,4 @@
+@import "slicknav.css";
 /**
                                       
  .-.                      .-.       .-.       
@@ -103,6 +104,13 @@ section {
 	display: block;
 	width: 100%;	
 }
+#menu {
+    position: fixed;
+    right: 20px;
+    top: 45px;
+    z-index: 900;
+	display: none;
+}
 
 /* Header
 --------------------------------------------------*/
@@ -169,7 +177,7 @@ header.topo nav ul li {
 	padding: 0;
 	list-style: none;
 	display: inline-block;
-	margin-right: 80px;
+	margin-right: 60px;
 }
 header.topo nav ul li:last-child {
 	 margin: 0;	
@@ -314,6 +322,8 @@ section.menu div.boxMenu div.etapa_1 p {
     width: 283px;
     position: absolute;
 	text-align: center;
+	z-index: 500;
+	background: #FFF;
 }
 section.menu div.boxMenu div.etapa_1 a {
 	display: block;
@@ -334,6 +344,7 @@ section.menu div.boxMenu div.etapa_1 p {
 	color: #506faf;
 	font-size: 15px;
 	line-height: 21px;
+	z-index: 500;
 }
 section.menu div.boxMenu div.etapa_1 a:hover {
 	text-decoration: none;
@@ -500,6 +511,7 @@ section.menu div.boxMenu div.etapa_3 {
 	-moz-border-radius: 20px;
 	border-radius: 20px;
 	display: none;
+	z-index: 90;
 }
 section.menu div.boxMenu div.etapa_3 a.voltar {
     background: url(../img/bg/bg_voltar.png) no-repeat scroll 0 0;
@@ -734,8 +746,8 @@ section.niveisGeograficos div.boxMapa div.mapa {
 	display: block;
 	margin-top: 40px;
 	width: 100%;
-	width: 419px;
-	height: 419px;
+	max-width: 419px;
+	min-height: 419px;
 }
 section.niveisGeograficos div.boxMapa:hover h3,
 section.niveisGeograficos div.boxMapa.ativo h3 {
@@ -743,22 +755,27 @@ section.niveisGeograficos div.boxMapa.ativo h3 {
 	color: #73b5c7;
 }
 section.niveisGeograficos div.boxMapa div.mapa a {
-	width: 419px;
-	height: 419px;
+	width: 100%;
+	max-width: 419px;
+	min-height: 419px;
 }
 section.niveisGeograficos div.boxMapa.tp1 div.mapa a {
 	background: url(../img/gr/gr_mapa_1_normal.png) no-repeat;
+	background-size: contain;
 }
 section.niveisGeograficos div.boxMapa.tp1:hover div.mapa a,
 section.niveisGeograficos div.boxMapa.tp1.ativo div.mapa a {
 	background: url(../img/gr/gr_mapa_1_ativo.png) no-repeat;
+	background-size: contain;
 }
 section.niveisGeograficos div.boxMapa.tp2 div.mapa a {
 	background: url(../img/gr/gr_mapa_2_normal.png) no-repeat;
+	background-size: contain;
 }
 section.niveisGeograficos div.boxMapa.tp2:hover div.mapa a,
 section.niveisGeograficos div.boxMapa.tp2.ativo div.mapa a {
 	background: url(../img/gr/gr_mapa_2_ativo.png) no-repeat;
+	background-size: contain;
 }
 section.tabelaDados {
 	float: left;
@@ -804,13 +821,19 @@ section.tabelaDados table.table thead.topo tr th {
 }
 section.tabelaDados table.table.table-bordered td, 
 section.tabelaDados table.table.table-bordered th {
-    border: 1px solid #4c6196;
+    border: 1px solid #4c6196 !important;
 }
 section.tabelaDados table.table.table-bordered th {
     border: 1px solid #413c80;
 }
 section.tabelaDados table.table td {
 	color: #FFF;
+}
+section.tabelaDados table.table tbody tr td.first {
+    border-left: 1px solid #4c6196 !important;
+}
+section.tabelaDados table.table tbody tr td.last {
+    border: 1px solid #4c6196 !important;
 }
 section.tabelaDados table.table tbody tr:hover {
 	background: #00b8ca;
@@ -1097,6 +1120,11 @@ table.tabelaPadraoFiltro thead tr th {
 /* Tablet
 --------------------------------------------------*/
 @media screen and (max-width: 980px) {
+	.hidden-xs,
+	.hidden-sm,
+	.hidden-md {
+		display: none;	
+	}
 	table.tabelaPadraoFiltro {
 		border:0;
 	}
@@ -1131,5 +1159,22 @@ table.tabelaPadraoFiltro thead tr th {
 	}
 	table.tabelaPadraoFiltro tbody tr td.last {
 		border-right: 1px solid #e5e5e5;
+	}
+	footer.rodape ul.menu li a {
+		font-size: 9px;	
+	}
+	footer.rodape ul.menu li {
+		margin: 0 4px;
+    	padding: 0;	
+	}
+	header.topo nav ul {
+		display: none;	
+	}
+	#menu {
+		display: block;	
+	}
+	section.temas div.boxTipo div.rep_1,
+	section.temas div.boxTipo div.rep_2 {
+		display: none;
 	}
 }

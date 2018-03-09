@@ -33,6 +33,8 @@ Functions.fn.extend = jQuery.extend;
 Functions.fn.extend({
     init: function(){
 		
+		$('#nav').slicknav();
+		
 		$(window).bind('scroll', function () {
 			self.buscaTopo();
 		});
