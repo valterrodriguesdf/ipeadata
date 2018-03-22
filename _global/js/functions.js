@@ -42,10 +42,39 @@ Functions.fn.extend({
 		self.buscaTopo();
 		self.resize();
 		self.pageHome();
+		self.buscaHome();
 		
 		$(window).resize(function(){
 			self.resize();
+			self.buscaHome();
 		});
+		
+		$(window).bind('scroll', function () {
+			if( $(window).scrollTop() > 100 ) {
+				$('header.topo').css({'top': 0});
+				$('#barra-brasil').hide();
+				$('#menu').css({'top': 15});
+			} else {
+				$('header.topo').css({'top': 33});
+				$('#barra-brasil').show();
+				$('#menu').css({'top': 45});
+			}
+		});
+		
+	},
+	
+	buscaHome: function(){
+		var tamanhoTela = $(window).height()
+			menu = $('section.menu');
+			
+			tam = (tamanhoTela - menu.height() - 490);
+			
+			if(tam < 180){
+				tam = 180;
+			}
+
+			$('section.busca div.formBusca').css({'margin-top': tam});
+			$('section.busca').css({'min-height': tam});
 		
 	},
 	
@@ -54,22 +83,40 @@ Functions.fn.extend({
 		$('.scroll-pane').jScrollPane();
 		$('.scroll-pane-menu').jScrollPane();
 		
+		$('section.temas div.boxTema').each(function(index) {
+			divCores = $('div.bar div.itemBar', $(this));
+			var totalCores = divCores.length;
+			var tamanho = 100/totalCores;
+			divCores.width(tamanho + '%');
+        });		
+		
 		$('section.menu div.boxMenu').click(function(){
 			var atual = $(this);
 			$('section.menu div.boxMenu').removeClass('ativo');
 			$('div.etapa_2').hide();
 			if($('div.etapa_3', atual).is(":visible") == false){
 				$('div.etapa_3').hide();
+				$("section.menu").animate({
+				paddingBottom: "0",
+				  }, 800, function() {
+				});	
 			}
 			atual.addClass('ativo');
 
 			$('div.etapa_2', atual).show();
+			
 			
 			return false;	
 		});
 		
 		$('section.menu div.etapa_2 a').click(function(){
 			$(this).parents('.etapa_2').next('.etapa_3').show();
+			
+			$("section.menu").animate({
+				paddingBottom: "170",
+			  }, 800, function() {
+			});	
+			
 			$('.scroll-pane-menu').jScrollPane();
 			return false;	
 		});
@@ -80,11 +127,17 @@ Functions.fn.extend({
 		
 		$('section.menu div.boxMenu div.etapa_3 a.voltar').click(function(){
 			$('section.menu div.boxMenu div.etapa_3').hide();
+			$("section.menu").animate({
+				paddingBottom: "0",
+				  }, 800, function() {
+				});	
 			return false;
 		});
 		
 		
-		$('section.niveisGeograficos div.mapa a').click(function(){
+		  
+		
+		/*$('section.niveisGeograficos div.mapa a').click(function(){
 			$('section.niveisGeograficos div.boxMapa').removeClass('ativo');
 			$(this).parents('.boxMapa').toggleClass('ativo');
 			
@@ -121,7 +174,7 @@ Functions.fn.extend({
 			});
 			return false;	
 		});
-		
+		*/
 		
 	},
 	
