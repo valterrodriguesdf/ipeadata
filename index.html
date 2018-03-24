@@ -49,9 +49,9 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-7 col-xs-12 col-12 hidden-xs">
                              <nav>
-                             	<ul id="nav">
-                                    <li><a href="#">Temas</a></li>
-                                    <li><a href="#">Níveis Geográficos</a></li>
+                             	<ul id="nav" class="navegacao">
+                                    <li><a href="#temas">Temas</a></li>
+                                    <li><a href="#niveisGeograficos">Níveis Geográficos</a></li>
                                 </ul>
                              </nav>       
                         </div>
@@ -82,16 +82,18 @@
             <section class="busca">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="formBusca">
-                            	<h1>Ipeadata</h1>
-                            	<form method="post">
-                                	<div class="box">
-                                        <label class="strLabel" for="caixaTexto">Pesquisar:</label>
-                                        <input type="text" class="caixaTexto form-control form-control-lg" id="caixaTexto" name="caixaTexto" placeholder="Insira a palavra" />
-                                        <button class="botao" type="submit">Buscar</button>
-                                    </div>
-                            	</form>
+                        <div class="col-lg-12 col-md-12 col-sm-12 meio">
+                            <div class="pivo">
+                                <div class="formBusca">
+                                    <h1>Ipeadata</h1>
+                                    <form method="post">
+                                        <div class="box">
+                                            <label class="strLabel" for="caixaTexto">Pesquisar:</label>
+                                            <input type="text" class="caixaTexto form-control form-control-lg" id="caixaTexto" name="caixaTexto" placeholder="Insira a palavra" />
+                                            <button class="botao" type="submit">Buscar</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -232,7 +234,7 @@
                     </div>                    
            		</div>
             </section>
-            <section class="temas">
+            <section class="temas" id="temas">
             	 <div class="container">
                     	<div class="row">
                         	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -637,7 +639,7 @@
                     </div>
                 </div>
             </section>
-            <section class="niveisGeograficos">
+            <section class="niveisGeograficos" id="niveisGeograficos">
                     <div class="container">
                     	<div class="row">
                         	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -726,7 +728,7 @@
     <div id="loader"></div>
       <script type="text/javascript">
 		$(window).load(function() {
-			$("#loader").fadeOut("fast");
+			$("#loader").delay(300).fadeOut("fast");
 		});
 	</script>
   </body>

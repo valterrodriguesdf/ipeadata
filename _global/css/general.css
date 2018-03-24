@@ -245,21 +245,38 @@ header.topo div.buscaTopo button.botao {
 /*--------------------------------------------------*/
 section.busca {
 	background: url(../img/bg/bg_busca.jpg) no-repeat top center;
+	overflow: hidden;
+	margin-bottom: 50px;
 }
 section.busca h1 {
-	background: url(../img/bg/bg_logo_busca.png) no-repeat;
+	background: url(../img/bg/bg_logo_busca.png) no-repeat top center;
 	min-height: 150px;
 	margin: 0 auto;
 	display: block;
 	max-width: 523px;
 	width: 100%;
 	background-size: contain;
-	margin-bottom: 40px;	
+	margin-bottom: 0;
+	transition: min-height .5s;
+}
+section.busca div.meio {
+	position: relative;	
+	margin-top: 100px;
+	margin-bottom: 30px;
+	min-height: 540px;
+	transition: min-height .3s;
+}
+section.busca div.pivo {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	-webkit-transform: translate(0,-50%);
+	transform: translate(0,-50%);
 }
 section.busca div.formBusca {
 	margin: 0 auto;
-	margin-top: 300px;
-	margin-bottom: 60px;
+	margin-bottom: 0;
 	max-width: 910px;
 }
 section.busca div.formBusca div.box {
@@ -319,7 +336,12 @@ section.busca div.formBusca label {
 	text-align: center;
 }
 section.menu {
-	padding: 70px 0 0 0;
+	height: 570px;
+	/*padding: 70px 0 0 0;*/
+}
+section.menu.ativo {
+	height: 800px;	
+
 }
 section.menu div.boxMenu {
 	display: table;
@@ -333,12 +355,12 @@ section.menu div.boxMenu div.etapa_1 {
 section.menu div.boxMenu div.etapa_1 p {
 	position: absolute;
 	top: 230px;
-	display: none;
+	display: block;
     left: -12px;
-    width: 283px;
+    width: 270px;
     position: absolute;
 	text-align: center;
-	z-index: 500;
+	z-index: 1;
 	background: #FFF;
 }
 section.menu div.boxMenu div.etapa_1 a {
@@ -360,7 +382,7 @@ section.menu div.boxMenu div.etapa_1 p {
 	color: #506faf;
 	font-size: 15px;
 	line-height: 21px;
-	z-index: 500;
+	z-index: 1;
 }
 section.menu div.boxMenu div.etapa_1 a:hover {
 	text-decoration: none;
@@ -400,6 +422,13 @@ section.menu div.boxMenu.mn_1 div.etapa_1 p {
 section.menu div.boxMenu.mn_1 div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_1_normal.png) no-repeat top center;
 }
+section.menu div.boxMenu.mn_1.ativo div.etapa_1 div.icone:before {
+	content: url(../img/bg/bg_icone_menu_1.png);
+	width:0;
+	height:0;
+	visibility:hidden;
+	position: absolute;
+} 
 section.menu div.boxMenu.mn_1.ativo div.etapa_1 div.icone,
 section.menu div.boxMenu.mn_1:hover div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_1.png) no-repeat top center;
@@ -418,6 +447,13 @@ section.menu div.boxMenu.mn_2 div.etapa_1 h2 {
 section.menu div.boxMenu.mn_2 div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_2_normal.png) no-repeat top center;
 }
+section.menu div.boxMenu.mn_2.ativo div.etapa_1 div.icone:before {
+	content: url(../img/bg/bg_icone_menu_2.png);
+	width:0;
+	height:0;
+	visibility:hidden;
+	position: absolute;
+} 
 section.menu div.boxMenu.mn_2:hover div.etapa_1 div.icone,
 section.menu div.boxMenu.mn_2.ativo div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_2.png) no-repeat top center;
@@ -571,7 +607,7 @@ section.menu div.boxMenu .scroll-pane-menu {
 	overflow: auto;
 }
 section.temas {
-	padding: 70px 0;
+	
 }
 section.temas h1 {
 	font-family: "Raleway-SemiBold";
@@ -610,13 +646,13 @@ section.temas div.boxTema {
 	display: block;
 	width: 100%;
 	margin-bottom: 20px;
-	min-height: 129px;
+	min-height: 131px;
 	text-align: center;	
 	-webkit-border-radius: 22px;
 	-moz-border-radius: 22px;
 	border-radius: 22px;
 	display: inline-table;
-	height: 130px;
+	height: 132px;
 	-webkit-box-shadow: 0px 0px 13px 3px rgba(255,255,255,1);
 	-moz-box-shadow: 0px 0px 13px 3px rgba(255,255,255,1);
 	box-shadow: 0px 0px 13px 3px rgba(255,255,255,1);
@@ -697,6 +733,7 @@ section.temas div.type_1  div.rep_2 {
 }
 section.niveisGeograficos {
 	padding-bottom: 100px;	
+	margin-top: 100px;
 }
 section.niveisGeograficos h1 {
 	font-family: "Raleway-SemiBold";

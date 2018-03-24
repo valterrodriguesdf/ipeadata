@@ -43,11 +43,14 @@ Functions.fn.extend({
 		self.resize();
 		self.pageHome();
 		self.buscaHome();
+		self.navegacao();
 		
 		$(window).resize(function(){
 			self.resize();
 			self.buscaHome();
 		});
+		
+		self.buscaHome();
 		
 		$(window).bind('scroll', function () {
 			if( $(window).scrollTop() > 100 ) {
@@ -63,19 +66,31 @@ Functions.fn.extend({
 		
 	},
 	
+	navegacao: function(){
+		$('nav ul.navegacao li a').click(function(){
+			var conta = $( $(this).attr('href') ).position().top;
+			$("html, body").animate({ scrollTop:  conta }, 1000);
+			return false;	
+		});
+	},
+	
 	buscaHome: function(){
-		var tamanhoTela = $(window).height()
-			menu = $('section.menu');
-			
-			tam = (tamanhoTela - menu.height() - 490);
-			
-			if(tam < 180){
-				tam = 180;
-			}
-
-			$('section.busca div.formBusca').css({'margin-top': tam});
-			$('section.busca').css({'min-height': tam});
+		var tamanhoTela = $(window).height(),
+			menu = $('section.menu'),
+			logo = $('section.busca h1'),
+			meio = $('section.busca div.meio');
 		
+			tam = tamanhoTela - menu.height();
+			
+			if(tam < 230){
+				tam = 200;
+				logo.css({'min-height': '40px'});
+			} else {
+				logo.css({'min-height': '150px'});	
+			}
+						
+			meio.css({'min-height': tam});
+					
 	},
 	
 	pageHome: function(){
@@ -88,36 +103,44 @@ Functions.fn.extend({
 			var totalCores = divCores.length;
 			var tamanho = 100/totalCores;
 			divCores.width(tamanho + '%');
-        });		
+        });	
 		
-		$('section.menu div.boxMenu').click(function(){
+		$('section.menu div.boxMenu').not('.ativo').hover(function(){
+			$('section.menu div.boxMenu div.etapa_2').hide();	
+			$('section.menu div.boxMenu div.etapa_3').hide();	
+			$('section.menu div.boxMenu').removeClass('ativo');
+			
+			$("section.menu").height('570px');
+			self.buscaHome();
+			
+			return false;
+		});
+		
+		
+		$('section.menu div.boxMenu').click(function(){		
 			var atual = $(this);
 			$('section.menu div.boxMenu').removeClass('ativo');
 			$('div.etapa_2').hide();
 			if($('div.etapa_3', atual).is(":visible") == false){
 				$('div.etapa_3').hide();
-				$("section.menu").animate({
-				paddingBottom: "0",
-				  }, 800, function() {
-				});	
 			}
 			atual.addClass('ativo');
-
-			$('div.etapa_2', atual).show();
 			
+			$('div.etapa_2', atual).show();
 			
 			return false;	
 		});
 		
 		$('section.menu div.etapa_2 a').click(function(){
-			$(this).parents('.etapa_2').next('.etapa_3').show();
+			var atual = $(this).parents('.etapa_2').next('.etapa_3');
+
+			atual.fadeIn('fast', function(){
+				$("section.menu").height('780px');
+				self.buscaHome();		
+				$('.scroll-pane-menu').jScrollPane();
+			});
 			
-			$("section.menu").animate({
-				paddingBottom: "170",
-			  }, 800, function() {
-			});	
-			
-			$('.scroll-pane-menu').jScrollPane();
+
 			return false;	
 		});
 		
@@ -126,55 +149,9 @@ Functions.fn.extend({
 		});
 		
 		$('section.menu div.boxMenu div.etapa_3 a.voltar').click(function(){
-			$('section.menu div.boxMenu div.etapa_3').hide();
-			$("section.menu").animate({
-				paddingBottom: "0",
-				  }, 800, function() {
-				});	
+			$('section.menu div.boxMenu div.etapa_3').hide();	
 			return false;
 		});
-		
-		
-		  
-		
-		/*$('section.niveisGeograficos div.mapa a').click(function(){
-			$('section.niveisGeograficos div.boxMapa').removeClass('ativo');
-			$(this).parents('.boxMapa').toggleClass('ativo');
-			
-			if($('section#niveisGeograficos').is(":visible") == true){
-				$('section.niveisGeograficos div.boxMapa').removeClass('ativo');
-			}
-			
-			$('section#dadosNiveisGeograficos').slideToggle('fast', function(){
-				$('section#dadosNiveisGeograficos').is(":visible");
-				$('.scroll-pane').jScrollPane();
-				if($('section#dadosNiveisGeograficos').is(":visible") == true){
-					$("html, body").animate({ scrollTop: $('section#dadosNiveisGeograficos').position().top - 170 }, 1000);
-				}
-			});
-			
-	
-			return false;	
-		});
-		
-		$('section.niveisGeograficosMunicipios div.mapa a').click(function(){
-			$('section.niveisGeograficosMunicipios div.boxMapa').removeClass('ativo');
-			$(this).parents('.boxMapa').toggleClass('ativo');
-			
-			if($('section#dadosNiveisGeograficosMunicipios').is(":visible") == true){
-				$('section.niveisGeograficosMunicipios div.boxMapa').removeClass('ativo');
-			}
-			
-			$('section#dadosNiveisGeograficosMunicipios').slideToggle('fast', function(){
-				$('section#dadosNiveisGeograficosMunicipios').is(":visible");
-				$('.scroll-pane').jScrollPane();
-				if($('section#dadosNiveisGeograficosMunicipios').is(":visible") == true){
-					$("html, body").animate({ scrollTop: $('section#dadosNiveisGeograficosMunicipios').position().top - 170 }, 1000);
-				}
-			});
-			return false;	
-		});
-		*/
 		
 	},
 	
