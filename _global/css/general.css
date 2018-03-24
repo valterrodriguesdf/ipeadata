@@ -422,7 +422,7 @@ section.menu div.boxMenu.mn_1 div.etapa_1 p {
 section.menu div.boxMenu.mn_1 div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_1_normal.png) no-repeat top center;
 }
-section.menu div.boxMenu.mn_1.ativo div.etapa_1 div.icone:before {
+section.menu div.boxMenu.mn_1 div.etapa_1 div.icone:before {
 	content: url(../img/bg/bg_icone_menu_1.png);
 	width:0;
 	height:0;
@@ -447,7 +447,7 @@ section.menu div.boxMenu.mn_2 div.etapa_1 h2 {
 section.menu div.boxMenu.mn_2 div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_2_normal.png) no-repeat top center;
 }
-section.menu div.boxMenu.mn_2.ativo div.etapa_1 div.icone:before {
+section.menu div.boxMenu.mn_2 div.etapa_1 div.icone:before {
 	content: url(../img/bg/bg_icone_menu_2.png);
 	width:0;
 	height:0;
@@ -493,6 +493,13 @@ section.menu div.boxMenu.mn_3:hover div.etapa_1 h2 {
 	border: 1px solid #bf324c;
 	color: #FFF;
 }
+section.menu div.boxMenu.mn_3 div.etapa_1 div.icone:before {
+	content: url(../img/bg/bg_icone_menu_3.png);
+	width:0;
+	height:0;
+	visibility:hidden;
+	position: absolute;
+} 
 section.menu div.boxMenu.mn_3.ativo div.etapa_1 div.icone,
 section.menu div.boxMenu.mn_3:hover div.etapa_1 div.icone {
 	background: url(../img/bg/bg_icone_menu_3.png) no-repeat top center;

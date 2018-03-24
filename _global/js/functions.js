@@ -112,6 +112,7 @@ Functions.fn.extend({
 			
 			$("section.menu").height('570px');
 			self.buscaHome();
+			self.buscaTopo();
 			
 			return false;
 		});
@@ -136,7 +137,8 @@ Functions.fn.extend({
 
 			atual.fadeIn('fast', function(){
 				$("section.menu").height('780px');
-				self.buscaHome();		
+				self.buscaHome();	
+				self.buscaTopo();	
 				$('.scroll-pane-menu').jScrollPane();
 			});
 			
@@ -156,7 +158,7 @@ Functions.fn.extend({
 	},
 	
 	buscaTopo: function(){
-		var busca = $('section.busca div.formBusca div.box').position().top;
+		var busca = $('section.busca div.formBusca div.box').position().top + 120;
 
 		  if ($(window).scrollTop() > busca ) {
 			  $('header.topo div.buscaTopo').fadeIn("fast");
