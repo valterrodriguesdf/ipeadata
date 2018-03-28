@@ -84,7 +84,7 @@ Functions.fn.extend({
 			
 			if(tam < 230){
 				tam = 200;
-				logo.css({'min-height': '40px'});
+				logo.css({'min-height': '60px'});
 			} else {
 				logo.css({'min-height': '150px'});	
 			}
@@ -110,7 +110,7 @@ Functions.fn.extend({
 			$('section.menu div.boxMenu div.etapa_3').hide();	
 			$('section.menu div.boxMenu').removeClass('ativo');
 			
-			$("section.menu").height('570px');
+			$("section.menu").height('520px');
 			self.buscaHome();
 			self.buscaTopo();
 			
@@ -136,7 +136,7 @@ Functions.fn.extend({
 			var atual = $(this).parents('.etapa_2').next('.etapa_3');
 
 			atual.fadeIn('fast', function(){
-				$("section.menu").height('780px');
+				$("section.menu").height('750px');
 				self.buscaHome();	
 				self.buscaTopo();	
 				$('.scroll-pane-menu').jScrollPane();

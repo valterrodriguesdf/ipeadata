@@ -246,7 +246,7 @@ header.topo div.buscaTopo button.botao {
 section.busca {
 	background: url(../img/bg/bg_busca.jpg) no-repeat top center;
 	overflow: hidden;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 section.busca h1 {
 	background: url(../img/bg/bg_logo_busca.png) no-repeat top center;
@@ -336,12 +336,11 @@ section.busca div.formBusca label {
 	text-align: center;
 }
 section.menu {
-	height: 570px;
+	height: 520px;
 	/*padding: 70px 0 0 0;*/
 }
 section.menu.ativo {
-	height: 800px;	
-
+	height: 760px;	
 }
 section.menu div.boxMenu {
 	display: table;
@@ -354,7 +353,7 @@ section.menu div.boxMenu div.etapa_1 {
 }
 section.menu div.boxMenu div.etapa_1 p {
 	position: absolute;
-	top: 230px;
+	top: 210px;
 	display: block;
     left: -12px;
     width: 270px;
@@ -372,7 +371,7 @@ section.menu div.boxMenu div.etapa_1 div.icone {
 	height: 115px;
 	display: table;
 	margin: 0 auto;
-	margin-bottom: 30px;
+	margin-bottom: 17px;
 }
 section.menu div.boxMenu div.etapa_1 p {
 	font-family: 'Raleway-Regular';
