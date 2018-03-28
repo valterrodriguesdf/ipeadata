@@ -340,7 +340,7 @@ section.menu {
 	/*padding: 70px 0 0 0;*/
 }
 section.menu.ativo {
-	height: 760px;	
+	height: 750px;	
 }
 section.menu div.boxMenu {
 	display: table;
